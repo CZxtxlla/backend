@@ -43,13 +43,13 @@ def evaluate_position():
     global board
     try:
         # Adjust the path to the Stockfish binary as needed.
-        engine = chess.engine.SimpleEngine.popen_uci("/opt/homebrew/bin/stockfish")
+        # engine = chess.engine.SimpleEngine.popen_uci("/opt/homebrew/bin/stockfish")
         # Analyze the board with a short time limit (0.1 seconds)
-        info = engine.analyse(board, chess.engine.Limit(time=0.1))
-        engine.quit()
+        # info = engine.analyse(board, chess.engine.Limit(time=0.1))
+        # engine.quit()
         # Extract evaluation (convert to centipawns, use a high value for mate)
-        score = info["score"].white().score(mate_score=100000)
-        return jsonify({"evaluation": score})
+        # score = info["score"].white().score(mate_score=100000)
+        return jsonify({"evaluation": "0"})
     except Exception as e:
         return jsonify({"error": str(e)}), 400
 
